@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="flex justify-center items-center bg-blue-400 h-screen w-screen">
+    <main
+      class="h-[250px] w-[500px] flex flex-col gap-4 bg-white shadow-md rounded-lg p-7"
+    >
+      <form action="">
+        <div class="flex justify-center items-center gap-3">
+          <input
+            class="flex-4 h-10 p-3 outline-1 outline-slate-300 rounded-md"
+            type="text"
+            placeholder="Amount"
+            id="amount"
+          />
+          <select
+            class="h-10 flex-1 outline-1 outline-slate-300 rounded-md"
+            id="tax"
+          >
+            <option class="rounded-md" value="5">5%</option>
+            <option value="10">10%</option>
+            <option value="15">15%</option>
+            <option value="25">25%</option>
+          </select>
+        </div>
+      </form>
+      <button
+        class="h-[100px] w-full rounded-md bg-orange-400 text-white text-xl hover:brightness-95 active:brightness-90 active:translate-y-[2px] transition-all duration-300 ease-in-out"
+      >
+        Caculate
+      </button>
+      <section
+        class="h-full w-full rounded-md outline-1 outline-dashed outline-slate-300 bg-slate-100"
+        id="result"
+      ></section>
+    </main>
+  </body>
+</html>
