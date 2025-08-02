@@ -20,7 +20,7 @@
           />
           <select
             class="h-10 flex-1 outline-1 outline-slate-300 rounded-md"
-            id="tax"
+            id="tip"
           >
             <option class="rounded-md" value="5">5%</option>
             <option value="10">10%</option>
@@ -31,13 +31,15 @@
       </form>
       <button
         class="h-[100px] w-full rounded-md bg-orange-400 text-white text-xl hover:brightness-95 active:brightness-90 active:translate-y-[2px] transition-all duration-300 ease-in-out"
+        id="calculate"
       >
         Caculate
       </button>
       <section
-        class="h-full w-full rounded-md outline-1 outline-dashed outline-slate-300 bg-slate-100"
+        class="flex justify-between px-4 py-2 items-center h-full w-full rounded-md outline-1 outline-dashed outline-slate-300 bg-slate-100"
         id="result"
       ></section>
     </main>
+    <script src="script.js" defer></script>
   </body>
 </html>
