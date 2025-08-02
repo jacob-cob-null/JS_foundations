@@ -14,7 +14,7 @@
         <div class="flex justify-center items-center gap-3">
           <input
             class="flex-4 h-10 p-3 outline-1 outline-slate-300 rounded-md"
-            type="text"
+            type="number"
             placeholder="Amount"
             id="amount"
           />
@@ -36,9 +36,18 @@
         Caculate
       </button>
       <section
-        class="flex justify-between px-4 py-2 items-center h-full w-full rounded-md outline-1 outline-dashed outline-slate-300 bg-slate-100"
+        class="flex justify-between p-2 gap-2 items-center h-full w-full rounded-md outline-1 outline-dashed outline-slate-300 bg-slate-100"
         id="result"
-      ></section>
+      >
+        <div
+          id="calcContainer"
+          class="flex-1 w-full h-full flex flex-col justify-center items-center p-3 bg-slate-200 rounded-s"
+        ></div>
+        <div
+          id="totalContainer"
+          class="flex-1 w-full h-full flex flex-col justify-center items-center p-3 bg-slate-200 rounded-s"
+        ></div>
+      </section>
     </main>
     <script src="script.js" defer></script>
   </body>
