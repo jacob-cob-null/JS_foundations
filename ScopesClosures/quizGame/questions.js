@@ -7,7 +7,7 @@ export async function getQuestions() {
 
 //format questions
 export async function prepQuestions() {
-    
+
     //get fetch
     let questions = await getQuestions()
 
