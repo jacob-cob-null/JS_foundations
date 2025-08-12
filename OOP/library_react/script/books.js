@@ -1,4 +1,3 @@
-// persistent "state"
 const books = []
 
 function booksArray() {
@@ -16,14 +15,14 @@ function booksArray() {
             }
         },
         findBook: (id) => books.find(b => b.bookID === id),
-        getBooks: () => [...books] // return a copy (like React state snapshot)
+        getBooks: () => [...books]
     }
 }
 
-// create one shared instance
+//one shared instance
 const bookArr = booksArray()
 
-// usage:
+//new book
 export function newBook(title, author) {
     let book = {
         bookID: crypto.randomUUID(),
@@ -33,11 +32,11 @@ export function newBook(title, author) {
     }
     bookArr.addBook(book)
 }
-
+//delete book
 export function delBook(id) {
     bookArr.delBook(id)
 }
-
+//edit book
 export function editBook(id) {
     const bookObj = bookArr.findBook(id)
     if (!bookObj) return

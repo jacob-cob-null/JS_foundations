@@ -1,5 +1,5 @@
 import { delButton, editButton, toggleButton } from "./buttons.js";
-
+import { newBook, delBook, editBook } from "../books";
 export function bookDOM(bookObj) {
     const bookCont = document.createElement('div');
     bookCont.className =
@@ -15,12 +15,20 @@ export function bookDOM(bookObj) {
 
     const btnGroup = document.createElement('div');
     btnGroup.className = 'flex justify-end items-center gap-2';
+    let id = bookObj.bookID
+    bookCont.dataset.id = id
 
-    // Attach unique ID so buttons know which book they belong to
-    btnGroup.appendChild(editButton(() => handleEdit(bookObj.id)));
-    btnGroup.appendChild(delButton(() => handleDelete(bookObj.id)));
-    btnGroup.appendChild(toggleButton(() => handleToggle(bookObj.id)));
+    const editBtn = editButton();
+    editBtn.addEventListener('click', () => onEdit(id));
 
+    const delBtn = delButton();
+    delBtn.addEventListener('click', () => onDelete(id));
+
+    const toggleBtnEl = toggleButton();
+    toggleBtnEl.addEventListener('click', () => onToggle(id));
+
+
+    btnGroup.append(editBtn, delBtn, toggleBtnEl);
     bookCont.append(title, author, btnGroup);
 
     return bookCont;
