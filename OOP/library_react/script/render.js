@@ -2,9 +2,10 @@ import { addBookBtn } from "./addBookListener.js";
 import { getBook } from "./books.js";
 import { bookDOM } from "./components/bookContainer.js";
 
-let bookContainer = document.getElementById('bookContainer')
+
 
 export function initApp() {
+    let bookContainer = document.getElementById('bookContainer')
     addBookBtn('newBookform')
     renderBooks()
 }

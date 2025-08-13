@@ -30,11 +30,7 @@ function booksArray() {
 const bookArr = booksArray()
 
 //initial
-newBook("The Pragmatic Programmer", "Andrew Hunt & David Thomas")
-newBook("Clean Code", "Robert C. Martin")
-newBook("JavaScript: The Good Parts", "Douglas Crockford")
-newBook("You Don't Know JS Yet", "Kyle Simpson")
-newBook("Eloquent JavaScript", "Marijn Haverbeke")
+
 
 //new book
 export function newBook(title, author) {
@@ -45,6 +41,7 @@ export function newBook(title, author) {
         bookStatus: false
     }
     bookArr.addBook(book)
+    renderBooks()
 }
 //delete book
 export function delBook(id) {
@@ -69,7 +66,7 @@ export function toggleBook(id) {
     renderBooks()
 }
 
-//get boks
+//get books
 export function getBook() {
     return bookArr.getBooks()
 }
