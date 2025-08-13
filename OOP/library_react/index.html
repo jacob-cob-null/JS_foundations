@@ -32,30 +32,30 @@
           class="h-full w-full rounded-lg outline-2 outline-blue-200 flex gap-4 p-4 overflow-y-scroll flex-wrap"
         >
           <!--Books-->
-          <div
-            class="w-[240px] h-[280px] bg-white shadow-md rounded-md p-4 border-l-8 border-blue-400 flex flex-col justify-between"
-          >
-            <h1 class="text-2xl font-bold">title</h1>
-            <div class="flex justify-end items-center gap-2">
-              <button
-                class="h-[20px] w-fit p-2 outline-1 flex items-center justify-center rounded-md bg-yellow-50 outline-yellow-300 text-yellow-600"
-              >
-                edit
-              </button>
-              <button
-                class="h-[20px] w-fit p-2 outline-1 flex items-center justify-center rounded-md bg-red-50 outline-red-300 text-red-600"
-              >
-                delete
-              </button>
-              <button
-                class="h-[20px] w-fit p-2 outline-1 flex items-center justify-center rounded-md bg-green-50 outline-green-300 text-green-600"
-              >
-                read?
-              </button>
-            </div>
-          </div>
         </div>
       </div>
+      <dialog
+        id="newBookform"
+        class="h-[300px] w-[450px] p-5 rounded-lg shadow-lg self-center justify-self-center"
+      >
+        <form class="flex flex-col justify-center gap-5 text-center">
+          <h1 class="text-2xl">Add New Book</h1>
+          <input
+            class="h-[50px] outline-1 outline-blue-200 p-2 rounded-md"
+            type="text"
+            id="title"
+            placeholder="Title"
+          />
+          <input
+            class="h-[50px] outline-1 outline-blue-200 p-2 rounded-md"
+            type="text"
+            id="Author"
+            placeholder="Author"
+          />
+
+          <button class="w-full h-[50px] rounded-md bg-blue-400">Add</button>
+        </form>
+      </dialog>
     </main>
     <script src="./script/app.js" type="module"></script>
   </body>
