@@ -37,3 +37,9 @@ function updateDim(x, y) {
     this.location.yaxis = y
 }
 updateDim.apply(newCircle, [10, 10])
+
+let number = 10
+function increase(number) {
+    number++
+}
+
