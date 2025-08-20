@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Fetcher</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="w-full h-screen flex justify-center items-center bg-blue-500">
+    <main class="h-[220px] w-[300px] bg-white rounded-lg shadow-lg flex flex-col p-4 gap-4">
+        <div class="h-full w-full bg-slate-200 rounded-md shadow-inner flex flex-col gap-2 p-2 justify-center items-center">
+            <h1 class="setup text-center"></h1>
+            <h1 class="punchline font-bold min-h-8 italic text-black"></h1>
+        </div>
+        <button id="getJoke" class="h-[60px] w-full bg-red-500 rounded-md hover:brightness-95 active:brightness-93 text-white font-bold text-xl text-center">Generate Joke</button>
+    </main>
+    <script src="./scripts/app.js" type="module"></script>
+</body>
+</html>
