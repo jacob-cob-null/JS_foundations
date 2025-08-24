@@ -28,20 +28,23 @@
         <section
           class="bg-white flex-[1.5] text-start p-2 text-2xl font-semibold"
         >
-          Balance: 10000
+          Balance
         </section>
         <section class="flex-2 h-full grid grid-cols-3 gap-2">
           <button
+            id="addIncome"
             class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-blue-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
           >
             Add Income
           </button>
           <button
+            id="addExpense"
             class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-green-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
           >
             Add Expense
           </button>
           <button
+            id="clearHistory"
             class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-red-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
           >
             Clear
@@ -50,10 +53,10 @@
       </div>
       <!--Expense Table-->
       <section class="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+        <!--Expense Record-->
         <div
           class="h-[40px] w-full flex justify-between items-center bg-slate-50 rounded-sm mb-2 py-4 px-6"
         >
-          <!--Expense Record-->
           <div class="flex gap-8">
             <h1 class="bg-red-100 py-[2px] px-2 rounded-md">Category</h1>
             <h1>Car Payments</h1>
@@ -69,5 +72,83 @@
         </div>
       </section>
     </main>
+    <!--Modals-->
+
+    <!--income-->
+    <dialog
+      id="incomeModal"
+      class="h-fit w-[350px] self-center justify-self-center shadow-lg rounded-xl p-6 bg-white"
+    >
+      <form class="flex flex-col gap-4">
+        <h1>Add Income</h1>
+        <input
+          type="number"
+          class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
+          placeholder="Amount"
+        />
+      </form>
+      <div class="flex h-fit gap-2 w-full mt-4 justify-center items-center">
+        <button
+          class="cancel h-[40px] flex-1 w-full outline-2 outline-slate-300 rounded-md"
+        >
+          Cancel
+        </button>
+        <button
+          class="action h-[40px] flex-1 w-full outline-2 outline-slate-300 rounded-md"
+        >
+          Add
+        </button>
+      </div>
+    </dialog>
+
+    <!--expense-->
+    <dialog
+      id="expenseModal"
+      class="h-fit w-[350px] self-center justify-self-center shadow-lg rounded-xl p-6 bg-white"
+    >
+      <form class="flex flex-col gap-4">
+        <h1>Add Expense</h1>
+        <input
+          type="text"
+          class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
+          placeholder="Title"
+        />
+        <input
+          type="number"
+          class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
+          placeholder="Amount"
+        />
+        <h1>Select Category:</h1>
+        <select
+          name="category"
+          id="category"
+          class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
+        >
+          <option value="food">Food & Drinks</option>
+          <option value="transport">Transport</option>
+          <option value="housing">Housing</option>
+          <option value="utilities">Utilities</option>
+          <option value="health">Health</option>
+          <option value="shopping">Shopping</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="savings">Savings</option>
+          <option value="other">Other</option>
+        </select>
+      </form>
+
+      <div class="flex h-fit gap-2 w-full mt-4 justify-center items-center">
+        <button
+          class="cancel h-[40px] flex-1 w-full outline-2 outline-slate-300 rounded-md"
+        >
+          Cancel
+        </button>
+        <button
+          class="action h-[40px] flex-1 w-full outline-2 outline-slate-300 rounded-md"
+        >
+          Add
+        </button>
+      </div>
+    </dialog>
+    <script src="./script/app.js" type="module"></script>
   </body>
 </html>
