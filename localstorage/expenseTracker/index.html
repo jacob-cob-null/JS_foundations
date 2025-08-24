@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <!--Tailwind-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/0820e56690.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="flex justify-center items-center h-screen w-full bg-blue-200">
+    <main
+      class="w-[1000px] h-[700px] flex flex-col gap-4 p-4 bg-white rounded-xl shadow-lg"
+    >
+      <h1
+        class="text-4xl text-white font-sans font-bold bg-blue-500 px-2 py-4 rounded-md"
+      >
+        Expense Tracker
+      </h1>
+      <!--Balance and action buttons-->
+      <div
+        class="flex gap-4 p-2 items-center outline-2 rounded-md outline-slate-100 shadow-lg"
+      >
+        <section
+          class="bg-white flex-[1.5] text-start p-2 text-2xl font-semibold"
+        >
+          Balance: 10000
+        </section>
+        <section class="flex-2 h-full grid grid-cols-3 gap-2">
+          <button
+            class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-blue-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
+          >
+            Add Income
+          </button>
+          <button
+            class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-green-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
+          >
+            Add Expense
+          </button>
+          <button
+            class="w-full h-full outline-1 outline-slate-100 rounded-xl bg-red-200 font-sans font-semibold hover:brightness-97 active:brightness-93"
+          >
+            Clear
+          </button>
+        </section>
+      </div>
+      <!--Expense Table-->
+      <section class="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+        <div
+          class="h-[40px] w-full flex justify-between items-center bg-slate-50 rounded-sm mb-2 py-4 px-6"
+        >
+          <!--Expense Record-->
+          <div class="flex gap-8">
+            <h1 class="bg-red-100 py-[2px] px-2 rounded-md">Category</h1>
+            <h1>Car Payments</h1>
+          </div>
+          <div class="flex gap-6 justify-center">
+            <i
+              class="fa-solid fa-pencil active:text-[14px] transition-all duration-150"
+            ></i>
+            <i
+              class="fa-solid fa-trash active:text-[14px] transition-all duration-150"
+            ></i>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
