@@ -1,4 +1,3 @@
-import { buttonEvents } from "./events.js";
-import { showBalance } from "./render.js";
-buttonEvents();
-showBalance()
+import { initApp } from "./init.js";
+
+initApp()

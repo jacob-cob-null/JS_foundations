@@ -3,7 +3,7 @@ import { showBalance } from "./render.js"
 export let currentBalance = 0
 
 export function getIncome() {
-    const input = document.getElementById('amount').value
+    const input = document.getElementById('amountIncome').value
     if (input < 0) {
         alert("No negative numbers allowed")
     }
@@ -13,17 +13,13 @@ export function getIncome() {
 }
 
 export function updateBalance(newBalance) {
-    //get sum of balance
-    if (newBalance > 0) {
-        let balance = getCurrentBalance() + Number(newBalance)
-        localStorage.setItem('currentBalance', balance)
-
-        //render updated balance
-        showBalance()
-    }
+    // Set balance directly
+    localStorage.setItem('currentBalance', Number(newBalance));
+    showBalance();
 }
 
 //return current balance
 export function getCurrentBalance() {
-    return Number(localStorage.getItem('currentBalance'))
+    const val = localStorage.getItem('currentBalance');
+    return val === null || isNaN(Number(val)) ? 0 : Number(val);
 }

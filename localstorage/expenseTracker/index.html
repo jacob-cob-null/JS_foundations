@@ -51,15 +51,19 @@
         </section>
       </div>
       <!--Expense Table-->
-      <section class="w-full flex-1 overflow-y-auto overflow-x-hidden p-2">
+      <section
+        id="expenseTable"
+        class="w-full flex-1 overflow-y-auto overflow-x-hidden p-2"
+      >
         <!--Expense Record-->
         <div
-          class="h-[40px] w-full flex justify-between items-center bg-slate-50 rounded-sm mb-2 py-4 px-6"
+          class="h-[40px] w-full flex justify-between items-center bg-slate-50 rounded-sm mb-2 p-4"
         >
           <div class="flex gap-8">
             <h1 class="bg-red-100 py-[2px] px-2 rounded-md">Category</h1>
             <h1>Car Payments</h1>
           </div>
+          <h1>1000</h1>
           <div class="flex gap-6 justify-center">
             <i
               class="fa-solid fa-pencil active:text-[14px] transition-all duration-150"
@@ -82,7 +86,7 @@
         <h1>Add Income</h1>
         <input
           type="number"
-          id="amount"
+          id="amountIncome"
           class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
           placeholder="Amount"
         />
@@ -110,18 +114,20 @@
         <h1>Add Expense</h1>
         <input
           type="text"
+          id="expenseTitle"
           class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
           placeholder="Title"
         />
         <input
           type="number"
+          id="expenseAmount"
           class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
           placeholder="Amount"
         />
         <h1>Select Category:</h1>
         <select
           name="category"
-          id="category"
+          id="expenseCategory"
           class="w-full h-[50px] bg-slate-100 rounded-md p-2 outline-slate-300"
         >
           <option value="food">Food & Drinks</option>
