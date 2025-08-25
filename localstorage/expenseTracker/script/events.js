@@ -1,3 +1,6 @@
+import { getIncome, updateBalance } from "./income.js";
+
+
 export function buttonEvents() {
   //buttons
   const addIncome = document.getElementById("addIncome");
@@ -9,8 +12,8 @@ export function buttonEvents() {
   const expenseModal = document.getElementById("expenseModal");
 
   //init modals
-  modalIncome(incomeModal);
-  modalIncome(expenseModal);
+  modalIncome(incomeModal, () => updateBalance(getIncome()));
+  modalIncome(expenseModal, () => updateBalance(getIncome()));
 
   //add income event
   addIncome.onclick = () => {
@@ -22,17 +25,18 @@ export function buttonEvents() {
   };
   //clear event
   clearHistory.onclick = () => {
-    alert("clear");
+    localStorage.clear()
   };
 }
+
 //modal utility for main action and cancel
-function modalIncome(modal) {
+function modalIncome(modal, mainAction) {
   modal.addEventListener("click", (e) => {
     if (e.target.classList.contains("cancel")) {
       modal.close();
     }
     if (e.target.classList.contains("action")) {
-      alert("Dialog main function!");
+      mainAction()
       modal.close();
     }
   });
