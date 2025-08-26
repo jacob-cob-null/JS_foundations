@@ -1,6 +1,5 @@
 import { habitHandler } from "./habitObject.js";
 
-const habitHandlers = habitHandler()
 
 export function initEvent() {
     const form = document.getElementById('form')
@@ -9,10 +8,12 @@ export function initEvent() {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        let title = titleInput.ariaValueMax.trim()
+        let title = titleInput.value.trim()
 
         if (title === "") return
 
-        habitHa
+        //add habit
+        habitHandler.newHabit(title)
+        titleInput.value = ""
     })
 }
