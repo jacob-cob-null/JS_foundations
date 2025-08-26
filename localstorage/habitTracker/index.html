@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <!--Tailwind-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!--FontAwesome-->
+    <script
+      src="https://kit.fontawesome.com/0820e56690.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="w-full h-screen flex justify-center items-center bg-red-200">
+    <!--Header-->
+    <div
+      class="w-[500px] h-[700px] bg-white rounded-2xl flex flex-col gap-4 p-4"
+    >
+      <div
+        class="h-[130px] w-full bg-red-400 rounded-lg flex flex-col p-2 gap-4 justify-start items-center"
+      >
+        <h1 class="font-bold text-white text-5xl">Habit Tracker</h1>
+        <!--Inputs-->
+        <form id="form" class="flex gap-4 w-full h-full">
+          <input
+            id="title"
+            class="flex-3 bg-white w-full h-full rounded-md text-xl outline-red-700 p-2"
+            type="text"
+          />
+          <button
+            type="submit"
+            class="flex-1 rounded-md bg-white text-2xl active:brightness-95"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+      <!--Habit table-->
+      <div class="w-full h-full bg-slate-100 rounded-lg p-2">
+        <!--Habit item-->
+        <div
+          class="bg-white shadow-md h-[40px] w-full rounded-md grid grid-cols-6 place-content-center p-2"
+        >
+          <h1 class="col-span-5">Title</h1>
+          <div class="col-span-1 flex justify-between items-center gap-2">
+            <button class="bg-green-200 w-[100px] h-full rounded-md">
+              done
+            </button>
+            <i class="fa fa-trash"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script/app.js" type="module"></script>
+  </body>
+</html>
