@@ -22,7 +22,6 @@ function habitFunction() {
             const id = crypto.randomUUID()
             const dateNow = getDate()
             habitArray.push({ id, title, status: false, dateNow })
-            alert("added")
             saveLocal()
         },
         toggleHabit: (id) => {
@@ -42,3 +41,16 @@ function habitFunction() {
     }
 }
 export const habitHandler = habitFunction()
+
+export function refreshStatus() {
+    const lastDate = localStorage.getItem("date");
+    const today = getDate();
+    if (lastDate !== today) {
+        habitArray.forEach(habit => {
+            habit.status = false;
+        });
+        localStorage.setItem("habitArray", JSON.stringify(habitArray));
+        localStorage.setItem("date", today);
+        renderHabits();
+    }
+}
