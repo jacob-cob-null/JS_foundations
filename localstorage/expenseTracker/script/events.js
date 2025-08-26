@@ -16,7 +16,7 @@ export function buttonEvents() {
   modalUtility(incomeModal, () => {
     updateBalance(getIncome());
   });
-  // Only use modalUtility for incomeModal, not for expenseModal
+
 
   //add income event
   addIncome.onclick = () => {

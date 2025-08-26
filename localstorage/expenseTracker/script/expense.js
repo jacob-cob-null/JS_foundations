@@ -1,8 +1,13 @@
 import { getCurrentBalance, updateBalance } from "./income.js";
 import { renderExpense } from "./render.js"
 
+let expense = []
+
+export const findExpense = (id) => expense.find(item => item.id === id);
+
 //expense utility
 export function expenseObj() {
+
     let expense = JSON.parse(localStorage.getItem('expense')) || [];
 
     const save = () => {
@@ -21,7 +26,7 @@ export function expenseObj() {
             save();
         },
         updateExpense: (id, newTitle, newAmount, newCategory) => {
-            const toUpdate = expense.find(item => item.id === id);
+            const toUpdate = findExpense(id);
             if (toUpdate) {
                 toUpdate.title = newTitle;
                 toUpdate.amount = newAmount;
